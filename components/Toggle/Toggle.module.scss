@@ -1,0 +1,48 @@
+@use '../../styles/utils.module.scss' as *;
+
+$width: 38px;
+$height: calc(#{$width} / 2);
+$offset: 2px;
+$border-radius: 10px;
+
+.toggle {
+  cursor: pointer;
+  width: $width;
+  height: $height;
+  display: inline-block;
+  cursor: pointer;
+
+  .input {
+    display: none;
+  }
+
+  .fill {
+    position: relative;
+    width: $width;
+    height: $height;
+    border-radius: $border-radius;
+    background: $color-primary;
+    transition: background 0.2s;
+  }
+
+  .input:checked ~ .fill {
+    background: $color-main;
+  }
+
+  .fill::after {
+    content: "";
+    position: absolute;
+    top: $offset;
+    left: $offset;
+    height: calc(#{$height} - 2 * #{$offset});
+    width: calc(#{$height} - 2 * #{$offset});
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: $border-radius;
+    transition: transform 0.2s;
+  }
+
+  .input:checked ~ .fill::after {
+    transform: translateX($height);
+  }
+}
