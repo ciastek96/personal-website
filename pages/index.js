@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import Avatar from "../components/Avatar/Avatar";
 import Layout, { siteTitle } from "../components/Layout/Layout";
+import Heading from "../components/Heading/Heading";
+import SkillsWrapper from "../components/SkillsWrapper/SkillsWrapper";
 import utilStyles from "../styles/utils.module.scss";
 
 export default function Home() {
@@ -11,8 +12,10 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <Link href="/contact">Kamil Kołacz</Link>
-        <h1>About me</h1>
+        <Heading>About me</Heading>
+        <p>Hi! I'm a beginner frontend developer. </p>
+        <Heading>Skills</Heading>
+        <SkillsWrapper />
       </section>
     </Layout>
   );

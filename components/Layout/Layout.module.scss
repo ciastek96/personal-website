@@ -3,7 +3,6 @@
 
 .container {
   max-width: 72rem;
-  // min-height: 100vh;
   margin: 1rem auto 6rem;
   display: flex;
   flex-direction: column;
@@ -11,18 +10,18 @@
   padding: 1rem;
 
   & > header {
-    flex: 1 1 35%;
-    //min-width: 15ch;
+    flex: 1 1 30%;
   }
 
   & > main {
-    flex: 1 1 65%;
-    //min-width 30ch;
-    color: $color-main;
-    padding: 0.5rem 1.5rem 2rem;
+    flex: 1 1 70%;
   }
 
   @media (min-width: v.$sm) {
     flex-direction: row;
+
+    & > main {
+      padding: 0.5rem 1.5rem 2rem 2rem;
+    }
   }
 }

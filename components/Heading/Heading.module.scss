@@ -1,0 +1,11 @@
+@use '../../styles/utils.module.scss' as *;
+
+.heading {
+  margin: 1rem 0 2rem;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin: 0 0.5rem;
+  }
+}

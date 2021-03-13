@@ -1,17 +1,17 @@
 import Head from "next/head";
+import { useAppContext } from "../../context";
 import styles from "./Layout.module.scss";
-import utilStyles from "../../styles/utils.module.scss";
-import Link from "next/link";
 import Header from "../Header/Header";
 import Toggle from "../Toggle/Toggle";
 
 const name = "Kamil Kołacz";
 export const siteTitle = "Kamil Kołacz - personal website";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
+  const [isEnabled, toggleDarkMode] = useAppContext();
   return (
     <>
-      <Toggle />
+      <Toggle toggleDarkMode={toggleDarkMode} />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
