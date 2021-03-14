@@ -1,97 +1,105 @@
 import Image from "next/Image";
-import { textChangeRangeIsUnchanged } from "typescript";
 import styles from "./ProjectsWrapper.module.scss";
 
 const ProjectsWrapper = () => {
-  function handleMouseMove(e) {
-    const { innerWidth, innerHeight } = window;
-    let { clientX: x, clientY: y } = e;
-    const walk = 10;
+  // function handleMouseMove(e) {
+  //   const { innerWidth, innerHeight } = window;
+  //   let { clientX: x, clientY: y } = e;
+  //   const walk = 20;
 
-    if (this !== e.target) {
-      x = x + e.target.offsetLeft;
-      y = y + e.target.offsetTop;
-    }
+  //   if (this !== e.target) {
+  //     x = x + e.target.offsetLeft;
+  //     y = y + e.target.offsetTop;
+  //   }
 
-    const rotateX = Math.round((x / innerWidth) * walk - walk / 2);
-    const rotateY = Math.round((y / innerHeight) * walk - walk / 2);
+  //   const rotateX = Math.round((x / innerWidth) * walk - walk / 2);
+  //   const rotateY = Math.round((y / innerHeight) * walk - walk / 2);
 
-    e.target.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  //   e.target.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-    console.log(`${rotateY}deg, ${rotateX}deg`);
-    console.log(window);
-  }
+  //   console.log(`${rotateY}deg, ${rotateX}deg`);
+  //   console.log(window);
+  // }
 
-  function handleMouseOver(e) {
-    e.target.style.transform = `rotateX(0deg) rotateY(0deg)`;
-  }
+  // function handleMouseOver(e) {
+  //   e.target.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  // }
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.innerWrapper}>
-        <Image
-          priority
-          src={`/images/2lb.jpg`}
-          height={600}
-          width={800}
-          quality="100"
-          alt="2lb.pl website"
-          className={styles.image}
-          onMouseMove={handleMouseMove}
-          onMouseOver={handleMouseOver}
-        />
-        <div className={styles.content}>
-          <h2>2LB</h2>
-          <p>Website created for 2LB company</p>
-          <ul>
-            <li>GatsbyJS</li>
-            <li>Styled-Components</li>
-            <li>SanityCMS</li>
-            <li>GraphQL</li>
-          </ul>
-          <a href="https://2lb.pl" target="_blank" rel="noopener noreferrer">
-            LIVE DEMO
-          </a>
+      {projects.map((project, i) => (
+        <div key={i} className={styles.innerWrapper}>
+          <Img
+            imgName={project.imgName}
+            alt={project.alt}
+            className={styles.image}
+          />
+          <div className={styles.content}>
+            <h2>{project.title}</h2>
+            <p>{project.description}</p>
+            {project?.stack?.length > 0 && (
+              <ul>
+                {project.stack.map((el) => (
+                  <li>{el}</li>
+                ))}
+              </ul>
+            )}
+            <a
+              aria-label={project.label}
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Demo
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.innerWrapper}>
-        <Image
-          priority
-          src={`/images/rentapp.jpg`}
-          height={600}
-          width={800}
-          quality="100"
-          alt="Rentapp screenshot"
-          className={styles.image}
-          onMouseMove={handleMouseMove}
-          onMouseOver={handleMouseOver}
-        />
-        <div className={styles.content}>
-          <h2>RentApp</h2>
-          <p>
-            A SPA app created for an engineering thesis. Constantly in progress.
-          </p>
-          <ul>
-            <li>React</li>
-            <li>Styled-Components</li>
-            <li>Redux</li>
-            <li>Express.js</li>
-            <li>MongoDB</li>
-            <li>NodeJS</li>
-          </ul>
-          <a
-            disabled
-            href="https://2lb.pl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LIVE DEMO
-          </a>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
+
+const Img = ({ imgName, alt, className }) => (
+  <Image
+    priority
+    src={`/images/${imgName}`}
+    height={300}
+    width={400}
+    quality="100"
+    alt={alt}
+    className={className}
+    // onMouseMove={handleMouseMove}
+    // onMouseLeave={handleMouseOver}
+  />
+);
+
+const projects = [
+  {
+    title: "2LB",
+    imgName: "2lb.jpg",
+    alt: "2lb.pl website",
+    description: "Website created for 2LB company.",
+    stack: ["GatsbyJS", "Styled-Components", "SanityCMS", "GraphQL"],
+    label: "Go to 2lb.pl",
+    href: "https://2lb.pl",
+  },
+  {
+    title: "RentApp",
+    imgName: "rentapp.jpg",
+    alt: "Rentapp screenshot",
+    description:
+      "A SPA app created for an engineering thesis. Constantly in progress.",
+    stack: [
+      "React",
+      "Styled-Components",
+      "Redux",
+      "Express.js",
+      "MongoDB",
+      "NodeJS",
+    ],
+    label: "Go to Rentapp live demo",
+    href: "#",
+  },
+];
 
 export default ProjectsWrapper;

@@ -5,7 +5,7 @@
   .innerWrapper {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     align-items: center;
     text-align: center;
 
@@ -14,31 +14,38 @@
     }
 
     .image {
+      overflow: visible;
       border-radius: 1rem;
-      //box-shadow: 2px 2px 50px rgb(0 0 0 / 15%);
     }
 
     .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
       h2 {
+        font-size: 1.25rem;
         color: $color-main;
       }
-      margin-bottom: 3rem;
+
     }
 
     ul {
       margin: 0;
       padding: 0;
       display: flex;
-      gap: 1rem;
+      gap: .5rem;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       font-weight: 700;
       font-size: 0.6rem;
+      margin-bottom: 2rem;
     }
+
     li {
       color: $color-main;
-      flex: 1 1 25%;
+      flex: 1 1 30%;
       list-style: none;
     }
 

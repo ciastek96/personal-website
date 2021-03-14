@@ -10,10 +10,20 @@ const socialData = {
 
 const SocialMedia = () => (
   <div className={styles.wrapper}>
-    <a href={socialData.github} target="_blank" rel="noopener noreferrer">
+    <a
+      aria-label="Link to Github profile"
+      href={socialData.github}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <GithubIcon className={styles.icon} />
     </a>
-    <a href={socialData.linkedin} target="_blank" rel="noopener noreferrer">
+    <a
+      aria-label="Link to Linkedin profile"
+      href={socialData.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <LinkedinIcon className={styles.icon} />
     </a>
   </div>
