@@ -87,7 +87,6 @@ const Carousel = ({ children }) => {
           className={
             current === 0 ? styles.arrowIconRight : styles.arrowIconLeft
           }
-          onClick={current === 0 ? handleNext : handlePrev}
         />
       </div>
     </div>
