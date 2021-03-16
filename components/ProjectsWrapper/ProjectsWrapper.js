@@ -39,8 +39,8 @@ const ProjectsWrapper = () => {
             <p>{project.description}</p>
             {project?.stack?.length > 0 && (
               <ul>
-                {project.stack.map((el) => (
-                  <li>{el}</li>
+                {project.stack.map((el, i) => (
+                  <li key={i}>{el}</li>
                 ))}
               </ul>
             )}
@@ -49,8 +49,9 @@ const ProjectsWrapper = () => {
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.demo}
             >
-              Demo
+              live demo
             </a>
           </div>
         </div>
@@ -79,7 +80,7 @@ const projects = [
     imgName: "2lb.jpg",
     alt: "2lb.pl website",
     description: "Website created for 2LB company.",
-    stack: ["GatsbyJS", "Styled-Components", "SanityCMS", "GraphQL"],
+    stack: ["GatsbyJS", "SanityCMS", "GraphQL", "Styled-Components"],
     label: "Go to 2lb.pl",
     href: "https://2lb.pl",
   },
@@ -91,11 +92,11 @@ const projects = [
       "A SPA app created for an engineering thesis. Constantly in progress.",
     stack: [
       "React",
-      "Styled-Components",
       "Redux",
       "Express.js",
       "MongoDB",
       "NodeJS",
+      "Styled-Components",
     ],
     label: "Go to Rentapp live demo",
     href: "#",

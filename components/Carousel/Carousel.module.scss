@@ -1,48 +1,109 @@
+@keyframes slidein {
+    from {
+        opacity: 0;
+        top: 0;
+    }
+    to {
+        top: -100%;
+        opacity: 1;
+    }
+}
+
 .wrapper {
     width: 100%;
-    border: 1px solid black;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     overflow: hidden;
     position: relative;
-    //min-height: 200px;
 
-    .slide, .slideActive {
-        min-width: 100%;
+    .iconWrapper {
+        position: absolute;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        top: 1rem;
+        right: 0;
+        border: 1px solid rgba(102,95,130,.15);
+        border-radius: 50%;
+
+        // p {
+        //     transition: transform ease-in-out .25s, opacity .3s;
+        //     text-decoration: uppercase;
+        //     color: rgb(102, 95, 130);
+        //     opacity: 0.5;
+        //     text-transform: uppercase;
+        //     font-size: .7rem;
+        //     font-weight: 700;
+        // }
+
+        &:hover p, &:hover .arrowIcon {
+            opacity: 1;
+        }
+
+        .arrowIcon {
+            height: 30px;
+            width: 30px;
+            padding: 6px;
+            transition: transform ease-in-out .25s, opacity .3s;
+            fill: rgb(102, 95, 130);
+            opacity: 0.5;
+        }
+
+        .arrowIconLeft {
+            @extend .arrowIcon;
+            transform: rotateY(180deg) rotateX(180deg);
+        }
+
+        .arrowIconRight {
+            @extend .arrowIcon;
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+    }
+
+
+    .innerWrapper {
+        width: 100%;
+        display: flex;
         position: relative;
-        top: 0;
-        transition: left ease-in-out .3s, opacity linear 0.15s;
-    }
 
-    .slide {
-        opacity: 0;
-    }
-    .slideActive {
-        opacity: 1;
-        background-color: white;
-    }
+        .slide, .slideActive {
+            min-width: 100%;
+            position: relative;
+            top: 0;
+            transition: left ease-in-out .3s, opacity linear 0.15s;
+        }
 
-   .slide[data-index="0"]{
-        left: -100%;
-   }
+        .slide {
+            opacity: 0;
+        }
+        .slideActive {
+            opacity: 1;
+            background-color: white;
+        }
 
-   .slide[data-index="1"]{
-    left: 100%;
-    }
+       .slide[data-index="0"]{
+            left: -100%;
+       }
 
-   .slideActive[data-index="0"]{
-        left: 0;
-    }
-    .slideActive[data-index="1"] {
-        left: -100%;
+       .slide[data-index="1"]{
+        left: 100%;
+        }
+
+       .slideActive[data-index="0"]{
+            left: 0;
+        }
+        .slideActive[data-index="1"] {
+            left: -100%;
+        }
+
     }
 
 
 
     button {
         cursor: pointer;
-        position: absolute;
+        //position: absolute;
         display: block;
         top: 50%;
         transform: translateY(-50%);
