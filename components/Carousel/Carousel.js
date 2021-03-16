@@ -78,7 +78,7 @@ const Carousel = ({ children }) => {
       {/* <button onClick={handleNext} className={styles.next}>
         next
       </button> */}
-      <div
+      <button
         className={styles.iconWrapper}
         onClick={current === 0 ? handleNext : handlePrev}
       >
@@ -88,7 +88,7 @@ const Carousel = ({ children }) => {
             current === 0 ? styles.arrowIconRight : styles.arrowIconLeft
           }
         />
-      </div>
+      </button>
     </div>
   );
 };

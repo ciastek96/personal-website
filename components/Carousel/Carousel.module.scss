@@ -19,12 +19,16 @@
 
 
     .iconWrapper {
+        margin: 1rem 0 0;
+        padding: 0;
+        display: block;
         position: absolute;
         cursor: pointer;
         display: flex;
         align-items: center;
         top: 1rem;
         right: 0;
+        background: none;
         border: 1px solid rgba(102,95,130,.15);
         border-radius: 50%;
         z-index: 1;
@@ -46,7 +50,7 @@
         .arrowIcon {
             height: 30px;
             width: 30px;
-            padding: 6px;
+            padding: 8px;
             transition: transform ease-in-out .25s, opacity .3s;
             fill: rgb(102, 95, 130);
             opacity: 0.5;
