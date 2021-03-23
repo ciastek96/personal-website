@@ -19,7 +19,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
             rel="stylesheet"
             media="print"
-            onload="this.media='all'"
+            onLoad="this.media='all'"
           />
         </Head>
         <body>

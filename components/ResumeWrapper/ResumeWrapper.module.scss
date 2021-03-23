@@ -1,0 +1,65 @@
+@use '../../styles/variables' as v;
+@use '../../styles/utils.module.scss' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: v.$lg) {
+    flex-direction: row;
+  }
+
+  .innerWrapper {
+    flex-basis: 100%;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        position: relative;
+        list-style: none;
+        border-left: 1px solid rgba(102, 95, 130, 0.15);
+        border-bottom: 1px solid rgba(102, 95, 130, 0.15);
+        margin-left: 1rem;
+        padding: 2rem;
+
+        .header {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          background-color: white;
+          top: 0;
+          left: -1rem;
+
+          p {
+            font-size: 0.7rem;
+            line-height: 1.1rem;
+
+            &:last-child {
+              color: $color-main;
+            }
+          }
+
+          .timeline {
+            font-size: 0.7rem;
+            list-style: none;
+            display: inline-block;
+            border: 1px solid rgba(102, 95, 130, 0.15);
+            border: 1px solid $color-main;
+            color: rgb(102, 95, 130);
+            border-radius: 40px;
+            padding: 0.4rem 1rem;
+            transition: border-color linear 0.3s;
+            margin-right: 1rem;
+
+            &:hover {
+              border-color: rgb(102, 95, 130);
+              color: rgb(114, 110, 132);
+            }
+          }
+        }
+      }
+    }
+  }
+}

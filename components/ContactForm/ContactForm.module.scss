@@ -5,6 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  gap: 1.3rem;
 
   & > input {
     flex: 1 1 45%;
@@ -13,8 +14,11 @@
   textarea,
   input {
     padding: 0.5rem;
+    padding: 0.9rem 1.3rem;
     border: 0;
     border-bottom: 2px solid #7d7d7d;
+    border: 1px solid #7d7d7d;
+    border-radius: 5px;
     caret-color: $color-main;
     outline: none;
     transition: outline-color ease-in 0.2s, border-bottom 0.2s;
@@ -22,7 +26,7 @@
 
     &::placeholder {
       font-size: 0.75rem;
-      color: #ccc;
+      color: #7d7d7d;
     }
 
     &:focus,
@@ -30,6 +34,7 @@
       //outline-color: $color-main;
       //border: none;
       border-bottom: 2px solid $color-main;
+      border: 1px solid $color-main;
     }
   }
 

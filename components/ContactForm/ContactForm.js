@@ -4,7 +4,7 @@ const ContactForm = () => (
   <form action="#" className={styles.form}>
     <input type="text" name="name" placeholder="Full name" required />
     <input type="text" name="email" placeholder="Email address" required />
-    <textarea name="content" placeholder="Message content" required></textarea>
+    <textarea name="content" placeholder="Message content" required />
     <button type="submit">Send</button>
   </form>
 );

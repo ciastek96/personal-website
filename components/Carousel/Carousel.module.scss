@@ -1,127 +1,123 @@
 @keyframes slidein {
-    from {
-        opacity: 0;
-        top: 0;
-    }
-    to {
-        top: -100%;
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+    top: 0;
+  }
+  to {
+    top: -100%;
+    opacity: 1;
+  }
 }
 
 .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  .iconWrapper {
+    margin: 1rem 0 0;
+    padding: 0;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    top: 1rem;
+    right: 0;
+    background: white;
+    border: 1px solid rgba(102, 95, 130, 0.15);
+    border-radius: 50%;
+    z-index: 3;
+
+    // p {
+    //     transition: transform ease-in-out .25s, opacity .3s;
+    //     text-decoration: uppercase;
+    //     color: rgb(102, 95, 130);
+    //     opacity: 0.5;
+    //     text-transform: uppercase;
+    //     font-size: .7rem;
+    //     font-weight: 700;
+    // }
+
+    &:hover p,
+    &:hover .arrowIcon {
+      opacity: 1;
+    }
+
+    .arrowIcon {
+      height: 30px;
+      width: 30px;
+      padding: 8px;
+      transition: transform ease-in-out 0.25s, opacity 0.3s;
+      fill: rgb(102, 95, 130);
+      opacity: 0.5;
+    }
+
+    .arrowIconLeft {
+      @extend .arrowIcon;
+      transform: rotate (180deg);
+    }
+
+    .arrowIconRight {
+      @extend .arrowIcon;
+      transform: rotateY(0deg);
+    }
+  }
+
+  .innerWrapper {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow: hidden;
     position: relative;
 
-
-    .iconWrapper {
-        margin: 1rem 0 0;
-        padding: 0;
-        display: block;
-        position: absolute;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        top: 1rem;
-        right: 0;
-        background: none;
-        border: 1px solid rgba(102,95,130,.15);
-        border-radius: 50%;
-        z-index: 1;
-
-        // p {
-        //     transition: transform ease-in-out .25s, opacity .3s;
-        //     text-decoration: uppercase;
-        //     color: rgb(102, 95, 130);
-        //     opacity: 0.5;
-        //     text-transform: uppercase;
-        //     font-size: .7rem;
-        //     font-weight: 700;
-        // }
-
-        &:hover p, &:hover .arrowIcon {
-            opacity: 1;
-        }
-
-        .arrowIcon {
-            height: 30px;
-            width: 30px;
-            padding: 8px;
-            transition: transform ease-in-out .25s, opacity .3s;
-            fill: rgb(102, 95, 130);
-            opacity: 0.5;
-            z-index: 1;
-        }
-
-        .arrowIconLeft {
-            @extend .arrowIcon;
-            transform: rotateY(180deg) rotateX(180deg);
-        }
-
-        .arrowIconRight {
-            @extend .arrowIcon;
-            transform: rotateY(0deg) rotateX(0deg);
-        }
+    .slide,
+    .slideActive {
+      min-width: 100%;
+      position: relative;
+      top: 0;
+      transition: left ease-in-out 0.3s, opacity linear 0.2s;
     }
 
-
-    .innerWrapper {
-        width: 100%;
-        display: flex;
-        position: relative;
-
-        .slide, .slideActive {
-            min-width: 100%;
-            position: relative;
-            top: 0;
-            transition: left ease-in-out .3s, opacity linear 0.15s;
-        }
-
-        .slide {
-            opacity: 0;
-        }
-        .slideActive {
-            opacity: 1;
-            background-color: white;
-        }
-
-       .slide[data-index="0"]{
-            left: -100%;
-       }
-
-       .slide[data-index="1"]{
-        left: 100%;
-        }
-
-       .slideActive[data-index="0"]{
-            left: 0;
-        }
-        .slideActive[data-index="1"] {
-            left: -100%;
-        }
-
+    .slide {
+      opacity: 0;
+    }
+    .slideActive {
+      opacity: 1;
+      background-color: white;
     }
 
-
-
-    button {
-        cursor: pointer;
-        //position: absolute;
-        display: block;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 9;
-
-        &.next {
-            right: 0;
-        }
-
-        &.prev {
-            left: 0;
-        }
+    .slide[data-index="0"] {
+      left: -100%;
     }
+
+    .slide[data-index="1"] {
+      left: 100%;
+    }
+
+    .slideActive[data-index="0"] {
+      left: 0;
+    }
+    .slideActive[data-index="1"] {
+      left: -100%;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    //position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+
+    &.next {
+      right: 0;
+    }
+
+    &.prev {
+      left: 0;
+    }
+  }
 }

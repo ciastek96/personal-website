@@ -1,22 +1,24 @@
-$color-red: red;
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
   color: rgb(43, 0, 212);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 a {
   color: #0070f3;
   color: rgb(43, 0, 212);
+  color: #0070f3;
   text-decoration: none;
 }
 
@@ -34,6 +36,10 @@ h1 {
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 2.4rem;
+}
+
+h6 {
+  color: #0070f3;
 }
 
 img {
