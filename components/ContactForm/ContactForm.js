@@ -6,10 +6,10 @@ const ContactForm = () => {
     <>
       <form
         id="contact"
-        action="#"
-        className={styles.form}
+        action="/success"
+        method="POST"
         data-netlify="true"
-        autoComplete="new-password"
+        className={styles.form}
       >
         <div className={styles.inputWrapper}>
           <input type="text" name="name" placeholder=" " required />
