@@ -5,12 +5,14 @@ const ContactForm = () => {
   return (
     <>
       <form
+        name="contact"
         id="contact"
         action="/success"
         method="POST"
         data-netlify="true"
         className={styles.form}
       >
+        <input type="hidden" name="contact" value="contact"></input>
         <div className={styles.inputWrapper}>
           <input type="text" name="name" placeholder=" " required />
           <label htmlFor="name">Full name</label>
