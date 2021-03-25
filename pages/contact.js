@@ -17,7 +17,6 @@ export default function Contacts() {
       <section className={utilStyles.headingMd}>
         <h1>Contact Me</h1>
         <ContactForm setIsModalOpen={setIsModalOpen} />
-        <Button onClick={() => setIsModalOpen(!isModalOpen)}>Open modal</Button>
         {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
       </section>
     </Layout>
