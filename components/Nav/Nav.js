@@ -26,7 +26,9 @@ const Nav = () => (
     <ul className={utilStyles.list}>
       {pages.map(({ name, path }, i) => (
         <li key={i} className={utilStyles.listItem}>
-          <Link href={`/${path}`}>{name}</Link>
+          <Link activeClassName="active" href={`/${path}`}>
+            {name}
+          </Link>
         </li>
       ))}
     </ul>

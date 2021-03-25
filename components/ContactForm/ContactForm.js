@@ -28,7 +28,10 @@ const ContactForm = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...contactData }),
       })
-        .then(() => console.log("Form successfully submitted"))
+        .then(() => {
+          setIsModalOpen(true);
+          console.log("Form successfully submitted");
+        })
         .catch((error) => alert(error));
     }
   };

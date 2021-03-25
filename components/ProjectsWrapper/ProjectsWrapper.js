@@ -66,7 +66,7 @@ const Img = ({ imgName, alt, className }) => (
     src={`/images/${imgName}`}
     height={300}
     width={400}
-    quality="100"
+    quality="80"
     alt={alt}
     className={className}
     // onMouseMove={handleMouseMove}

@@ -1,9 +1,14 @@
+@use '../../styles/utils.module.scss' as *;
+
 .nav {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
 
   li {
     margin: 0;
+    position: relative;
 
     &::first-letter {
       text-transform: uppercase;
@@ -12,6 +17,13 @@
     a {
       display: block;
       padding: 0.5rem 0.75rem;
+      color: $color-primary;
+      transition: color 0.2s ease-in-out;
+    }
+
+    a:focus,
+    a:hover {
+      color: $color-main;
     }
   }
 }

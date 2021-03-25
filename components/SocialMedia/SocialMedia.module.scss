@@ -4,18 +4,26 @@ $size: 22px;
 .wrapper {
   max-width: 100%;
   display: flex;
- //gap: 1rem;
+  //gap: 1rem;
 
-  .icon {
-    margin: .75rem;
-    width: $size;
-    height: $size;
-    cursor: pointer;
-    fill: black;
-    transition: fill linear 0.2s;
-
-    &:hover {
+  a {
+    &:hover .icon,
+    &:focus .icon {
       fill: $color-main;
+    }
+
+    .icon {
+      margin: 0.75rem;
+      width: $size;
+      height: $size;
+      cursor: pointer;
+      fill: black;
+      transition: fill linear 0.2s;
+
+      &:hover,
+      &:focus {
+        fill: $color-main;
+      }
     }
   }
 }
