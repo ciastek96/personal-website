@@ -7,7 +7,7 @@ const Modal = ({ setIsModalOpen }) => (
     <div className={styles.modal}>
       <div className={styles.message}>
         <h2>Your message has been sent!</h2>
-        <p>Thank you for your message! I will ask you ASAP!</p>
+        <p>Thank you for your message! I will respond ASAP!</p>
       </div>
       <Button onClick={() => setIsModalOpen(false)}>ok</Button>
     </div>
