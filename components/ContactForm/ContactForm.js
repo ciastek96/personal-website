@@ -8,7 +8,7 @@ const encode = (data) => {
     .join("&");
 };
 
-const ContactForm = () => {
+const ContactForm = ({ setIsModalOpen }) => {
   const [contactData, setContactData] = useState({
     fullname: "",
     email: "",
