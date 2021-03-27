@@ -1,8 +1,10 @@
 import styles from "./ResumeWrapper.module.scss";
+import { motion } from "framer-motion";
+import { stagger, fadeInUp } from "../../animations/animations.js";
 
 const ResumeWrapper = () => (
-  <div className={styles.wrapper}>
-    <div className={styles.innerWrapper}>
+  <motion.div variants={stagger} className={styles.wrapper}>
+    <motion.div variants={fadeInUp} className={styles.innerWrapper}>
       <h5>Education</h5>
       <ul>
         {data.education.map(({ name, city, date, degree, subject }, i) => (
@@ -17,8 +19,8 @@ const ResumeWrapper = () => (
           </li>
         ))}
       </ul>
-    </div>
-    <div className={styles.innerWrapper}>
+    </motion.div>
+    <motion.div variants={fadeInUp} className={styles.innerWrapper}>
       <h5>Employment history</h5>
       <ul>
         {data.employment.map(({ date, city, company, stance }, i) => (
@@ -32,8 +34,8 @@ const ResumeWrapper = () => (
           </li>
         ))}
       </ul>
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 const data = {

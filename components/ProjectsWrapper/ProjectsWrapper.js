@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { stagger, fadeInUp } from "../../animations/animations.js";
 import styles from "./ProjectsWrapper.module.scss";
 
 const ProjectsWrapper = () => {
@@ -26,9 +28,9 @@ const ProjectsWrapper = () => {
   // }
 
   return (
-    <div className={styles.wrapper}>
+    <motion.div variants={stagger} className={styles.wrapper}>
       {projects.map((project, i) => (
-        <div key={i} className={styles.innerWrapper}>
+        <motion.div key={i} variants={fadeInUp} className={styles.innerWrapper}>
           <Img
             imgName={project.imgName}
             alt={project.alt}
@@ -54,15 +56,15 @@ const ProjectsWrapper = () => {
               live demo
             </a>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
 const Img = ({ imgName, alt, className }) => (
   <Image
-    priority
+    //priority
     src={`/images/${imgName}`}
     height={300}
     width={400}

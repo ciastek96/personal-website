@@ -1,28 +1,14 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./Carousel.module.scss";
-import Heading from "../Heading/Heading";
-import SkillsWrapper from "../SkillsWrapper/SkillsWrapper";
 import ArrowIcon from "../../public/icons/svg/directional/arrow-right.svg";
-
-const data = [
-  {
-    heading: "Heading 1",
-    content:
-      "Vero lorem sed nonumy eos kasd rebum est, lorem sed et tempor ut at justo magna at diam, dolor et.",
-  },
-  {
-    heading: "Heading 2",
-    content:
-      "Sed amet sadipscing kasd sea nonumy clita diam. Et lorem elitr elitr sadipscing lorem ipsum, amet amet et dolores dolores est et, est.",
-  },
-];
 
 const Carousel = ({ children }) => {
   const [current, setCurrent] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
-  const elements = data.length;
+  const elements = children.length;
 
   const handleNext = () => {
     if (current < elements - 1) setCurrent(current + 1);
@@ -49,6 +35,11 @@ const Carousel = ({ children }) => {
       handlePrev();
     }
   }
+
+  const variants = {
+    open: { rotate: 0 },
+    closed: { rotate: 90 },
+  };
 
   return (
     <div
@@ -78,7 +69,9 @@ const Carousel = ({ children }) => {
       {/* <button onClick={handleNext} className={styles.next}>
         next
       </button> */}
-      <button
+      <motion.button
+        animate={current ? "open" : "closed"}
+        variants={variants}
         className={styles.iconWrapper}
         onClick={current === 0 ? handleNext : handlePrev}
       >
@@ -88,7 +81,7 @@ const Carousel = ({ children }) => {
             current === 0 ? styles.arrowIconRight : styles.arrowIconLeft
           }
         />
-      </button>
+      </motion.button>
     </div>
   );
 };

@@ -8,3 +8,4 @@ My personal website based on NextJS. Still in progress.
 2. Run `npm install`
 3. Run `npm run dev`
 
+[Live demo](http://kkolacz.netlify.app/)

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
+import Heading from "../components/Heading/Heading";
 import Layout, { siteTitle } from "../components/Layout/Layout";
 import ContactForm from "../components/ContactForm/ContactForm";
 import Modal from "../components/Modal/Modal";
@@ -13,7 +14,7 @@ export default function Contacts() {
         <title>Contact | {siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <h1>Contact Me</h1>
+        <Heading>Contact Me</Heading>
         <ContactForm setIsModalOpen={setIsModalOpen} />
         {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
       </section>

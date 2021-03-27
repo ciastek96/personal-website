@@ -13,16 +13,15 @@
     flex: 1 1 30%;
   }
 
-  & > main {
+  & > div {
     flex: 1 1 70%;
   }
 
   @media (min-width: v.$sm) {
     flex-direction: row;
 
-    & > main {
+    & > div {
       padding: 0.5rem 1.5rem 2rem 2rem;
     }
   }
-
 }

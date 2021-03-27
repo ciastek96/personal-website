@@ -1,13 +1,13 @@
 import styles from "./Heading.module.scss";
 import OpenTagIcon from "../../public/icons/opentag.svg";
 import CloseTagIcon from "../../public/icons/closetag.svg";
+import { motion } from "framer-motion";
+import { stagger, fadeInUp, scaleIn } from "../../animations/animations.js";
 
 const Heading = ({ children }) => (
-  <header className={styles.heading}>
-    {/* <OpenTagIcon className={styles.tag} /> */}
+  <motion.div variants={scaleIn} className={styles.heading}>
     <h1>{children}</h1>
-    {/* <CloseTagIcon className={styles.tag} /> */}
-  </header>
+  </motion.div>
 );
 
 export default Heading;

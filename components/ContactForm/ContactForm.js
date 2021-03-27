@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { fadeInUp, stagger } from "../../animations/animations";
 import styles from "./ContactForm.module.scss";
 import Button from "../Button/Button";
+import { motion } from "framer-motion";
 
 const encode = (data) => {
   return Object.keys(data)
@@ -37,7 +39,11 @@ const ContactForm = ({ setIsModalOpen }) => {
   };
 
   return (
-    <>
+    <motion.div variants={fadeInUp}>
+      <p>
+        Full in a form or send a message to{" "}
+        <a href="mailto:ciastek1996@gmail.com">ciastek1996@gmail.com</a>
+      </p>
       <form
         name="contact"
         id="contact"
@@ -81,7 +87,7 @@ const ContactForm = ({ setIsModalOpen }) => {
       <Button type="submit" form="contact">
         Send
       </Button>
-    </>
+    </motion.div>
   );
 };
 

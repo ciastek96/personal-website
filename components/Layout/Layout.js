@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { useAppContext } from "../../context";
+import { motion } from "framer-motion";
+import { stagger } from "../../animations/animations";
 import styles from "./Layout.module.scss";
 import Header from "../Header/Header";
 import Toggle from "../Toggle/Toggle";
@@ -8,10 +10,11 @@ const name = "Kamil Kołacz";
 export const siteTitle = "Kamil Kołacz - personal website";
 
 export default function Layout({ children }) {
-  const [isEnabled, toggleDarkMode] = useAppContext();
+  //const [isEnabled, toggleDarkMode] = useAppContext();
+
   return (
     <>
-      <Toggle toggleDarkMode={toggleDarkMode} />
+      {/* <Toggle toggleDarkMode={toggleDarkMode} /> */}
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -25,7 +28,14 @@ export default function Layout({ children }) {
           <meta name="og:title" content={siteTitle} />
         </Head>
         <Header />
-        <main>{children}</main>
+        <motion.div
+          exit={{ opacity: 0 }}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.3 }}
+        >
+          <motion.main variants={stagger}>{children}</motion.main>
+        </motion.div>
       </div>
     </>
   );
