@@ -17,54 +17,20 @@
   overflow: hidden;
   position: relative;
 
-  .iconWrapper {
-    margin: 1rem 0 0;
-    padding: 0;
-    display: block;
+  .button {
+    width: 30px;
+    height: 30px;
     position: absolute;
     cursor: pointer;
     display: flex;
     align-items: center;
     top: 1rem;
-    right: 0;
-    background: white;
+    right: 1rem;
+    background: white url("/icons/svg/directional/arrow-right.svg") no-repeat
+      50% 50%;
+    background-size: 50%;
     border: 1px solid rgba(102, 95, 130, 0.15);
     border-radius: 50%;
-    z-index: 3;
-
-    // p {
-    //     transition: transform ease-in-out .25s, opacity .3s;
-    //     text-decoration: uppercase;
-    //     color: rgb(102, 95, 130);
-    //     opacity: 0.5;
-    //     text-transform: uppercase;
-    //     font-size: .7rem;
-    //     font-weight: 700;
-    // }
-
-    &:hover p,
-    &:hover .arrowIcon {
-      opacity: 1;
-    }
-
-    .arrowIcon {
-      height: 30px;
-      width: 30px;
-      padding: 8px;
-      transition: transform ease-in-out 0.25s, opacity 0.3s;
-      fill: rgb(102, 95, 130);
-      opacity: 0.5;
-    }
-
-    .arrowIconLeft {
-      @extend .arrowIcon;
-      transform: rotate (180deg);
-    }
-
-    .arrowIconRight {
-      @extend .arrowIcon;
-      transform: rotateY(0deg);
-    }
   }
 
   .innerWrapper {
