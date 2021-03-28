@@ -4,7 +4,6 @@ import Layout, { siteTitle } from "../components/Layout/Layout";
 import Heading from "../components/Heading/Heading";
 import ResumeWrapper from "../components/ResumeWrapper/ResumeWrapper";
 import utilStyles from "../styles/utils.module.scss";
-import { motion } from "framer-motion";
 
 export default function Resume() {
   return (

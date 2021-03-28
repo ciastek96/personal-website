@@ -40,7 +40,7 @@ const ContactForm = ({ setIsModalOpen }) => {
 
   return (
     <motion.div variants={fadeInUp}>
-      <p>
+      <p className={styles.paragraph}>
         Full in a form or send a message to{" "}
         <a href="mailto:ciastek1996@gmail.com">ciastek1996@gmail.com</a>
       </p>
