@@ -1,10 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "../styles/global.scss";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { AppWrapper } from "../context";
-import Router from "next/dist/next-server/lib/router/router";
 
 export default function App({ Component, pageProps, router }) {
+  useEffect(() => {
+    Array.from(
+      document.querySelectorAll('head > link[rel="stylesheet"][data-n-p]')
+    ).forEach((node) => {
+      node.removeAttribute("data-n-p");
+    });
+    const mutationHandler = (mutations) => {
+      mutations.forEach(({ target }) => {
+        if (target.nodeName === "STYLE") {
+          if (target.getAttribute("media") === "x") {
+            target.removeAttribute("media");
+          }
+        }
+      });
+    };
+    const observer = new MutationObserver(mutationHandler);
+    observer.observe(document.head, {
+      subtree: true,
+      attributeFilter: ["media"],
+    });
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <AppWrapper>
       <AnimatePresence exitBeforeEnter>

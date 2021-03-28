@@ -14,8 +14,8 @@ const Carousel = ({ children }) => {
     <motion.div
       className={styles.wrapper}
       onPan={(e, { delta: { x } }) => {
-        if (x > 2) setIsToggle(false);
-        if (x < -2) setIsToggle(true);
+        if (x > 3) setIsToggle(false);
+        if (x < -3) setIsToggle(true);
       }}
     >
       <div className={styles.innerWrapper}>
