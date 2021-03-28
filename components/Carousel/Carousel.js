@@ -6,8 +6,8 @@ const Carousel = ({ children }) => {
   const [isToggle, setIsToggle] = useState(false);
 
   const variants = {
-    open: { rotate: 180 },
-    closed: { rotate: 0 },
+    right: { rotate: 180 },
+    left: { rotate: 0 },
   };
 
   return (
@@ -18,7 +18,7 @@ const Carousel = ({ children }) => {
         if (x < -2) setIsToggle(true);
       }}
     >
-      <motion.div className={styles.innerWrapper}>
+      <div className={styles.innerWrapper}>
         {React.Children.map(children || null, (child, i) => {
           return (
             <child.type
@@ -31,9 +31,9 @@ const Carousel = ({ children }) => {
             />
           );
         })}
-      </motion.div>
+      </div>
       <motion.button
-        animate={isToggle ? "open" : "closed"}
+        animate={isToggle ? "right" : "left"}
         variants={variants}
         className={styles.button}
         onClick={() => setIsToggle(!isToggle)}
