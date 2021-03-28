@@ -7,11 +7,10 @@ import Button from "../Button/Button";
 
 const NotFoundImage = ({ className }) => (
   <Image
-    priority
-    src={`/images/undraw_page_not_found_su7k.svg`}
-    height={400}
-    width={600}
-    quality="80"
+    src={`/images/404.jpg`}
+    height={435}
+    width={800}
+    quality="100"
     alt="Not found image"
     className={className}
   />

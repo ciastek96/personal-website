@@ -47,7 +47,6 @@ const ContactForm = ({ setIsModalOpen }) => {
       <form
         name="contact"
         id="contact"
-        //action="/success"
         method="POST"
         data-netlify="true"
         className={styles.form}
@@ -57,31 +56,31 @@ const ContactForm = ({ setIsModalOpen }) => {
         <div className={styles.inputWrapper}>
           <input
             type="text"
-            name="name"
-            placeholder=" "
+            name="fullname"
+            id="fullname"
             onChange={handleChange}
             required
           />
-          <label htmlFor="name">Full name</label>
+          <label htmlFor="fullname">Full name</label>
         </div>
         <div className={styles.inputWrapper}>
           <input
             type="email"
             name="email"
-            placeholder=" "
+            id="email"
             onChange={handleChange}
             required
           />
-          <label htmlFor="name">E-mail</label>
+          <label htmlFor="email">E-mail</label>
         </div>
         <div className={styles.inputWrapper}>
           <textarea
             name="content"
-            placeholder=" "
+            id="content"
             onChange={handleChange}
             required
           />
-          <label htmlFor="name">Write your message...</label>
+          <label htmlFor="content">Write your message...</label>
         </div>
       </form>
       <Button type="submit" form="contact">

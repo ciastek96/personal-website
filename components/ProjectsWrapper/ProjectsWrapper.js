@@ -64,10 +64,10 @@ const ProjectsWrapper = () => {
 
 const Img = ({ imgName, alt, className }) => (
   <Image
-    //priority
     src={`/images/${imgName}`}
     height={300}
     width={400}
+    layout="intrinsic"
     quality="80"
     alt={alt}
     className={className}

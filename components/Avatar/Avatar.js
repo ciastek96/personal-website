@@ -12,7 +12,8 @@ const Avatar = () => (
         className={utilStyles.borderCircle}
         height={250}
         width={250}
-        quality="90"
+        quality="85"
+        layout="intrinsic"
         alt="My picture"
       />
     </a>
