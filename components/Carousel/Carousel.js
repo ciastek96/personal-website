@@ -14,11 +14,11 @@ const Carousel = ({ children }) => {
     <motion.div
       className={styles.wrapper}
       onPan={(e, { delta: { x } }) => {
-        if (x > 3) setIsToggle(false);
-        if (x < -3) setIsToggle(true);
+        if (x > 2) setIsToggle(false);
+        if (x < -2) setIsToggle(true);
       }}
     >
-      <div className={styles.innerWrapper}>
+      <motion.div className={styles.innerWrapper}>
         {React.Children.map(children || null, (child, i) => {
           return (
             <child.type
@@ -31,7 +31,7 @@ const Carousel = ({ children }) => {
             />
           );
         })}
-      </div>
+      </motion.div>
       <motion.button
         animate={isToggle ? "right" : "left"}
         variants={variants}
