@@ -59,6 +59,7 @@ const ContactForm = ({ setIsModalOpen }) => {
             name="fullname"
             id="fullname"
             onChange={handleChange}
+            placeholder=" "
             required
           />
           <label htmlFor="fullname">Full name</label>
