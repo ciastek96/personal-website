@@ -33,7 +33,7 @@ const Carousel = ({ children }) => {
         })}
       </motion.div>
       <motion.button
-        name="toggle button"
+        aria-label="Toggle button"
         animate={isToggle ? "right" : "left"}
         variants={variants}
         className={styles.button}

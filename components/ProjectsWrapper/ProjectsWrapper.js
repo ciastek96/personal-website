@@ -3,64 +3,39 @@ import { motion } from "framer-motion";
 import { stagger, fadeInUp } from "../../animations/animations.js";
 import styles from "./ProjectsWrapper.module.scss";
 
-const ProjectsWrapper = () => {
-  // function handleMouseMove(e) {
-  //   const { innerWidth, innerHeight } = window;
-  //   let { clientX: x, clientY: y } = e;
-  //   const walk = 20;
-
-  //   if (this !== e.target) {
-  //     x = x + e.target.offsetLeft;
-  //     y = y + e.target.offsetTop;
-  //   }
-
-  //   const rotateX = Math.round((x / innerWidth) * walk - walk / 2);
-  //   const rotateY = Math.round((y / innerHeight) * walk - walk / 2);
-
-  //   e.target.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-  //   console.log(`${rotateY}deg, ${rotateX}deg`);
-  //   console.log(window);
-  // }
-
-  // function handleMouseOver(e) {
-  //   e.target.style.transform = `rotateX(0deg) rotateY(0deg)`;
-  // }
-
-  return (
-    <motion.div variants={stagger} className={styles.wrapper}>
-      {projects.map((project, i) => (
-        <motion.div key={i} variants={fadeInUp} className={styles.innerWrapper}>
-          <Img
-            imgName={project.imgName}
-            alt={project.alt}
-            className={styles.image}
-          />
-          <div className={styles.content}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            {project?.stack?.length > 0 && (
-              <ul>
-                {project.stack.map((el, i) => (
-                  <li key={i}>{el}</li>
-                ))}
-              </ul>
-            )}
-            <a
-              aria-label={project.label}
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.demo}
-            >
-              live demo
-            </a>
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
-  );
-};
+const ProjectsWrapper = () => (
+  <motion.div variants={stagger} className={styles.wrapper}>
+    {projects.map((project, i) => (
+      <motion.div key={i} variants={fadeInUp} className={styles.innerWrapper}>
+        <Img
+          imgName={project.imgName}
+          alt={project.alt}
+          className={styles.image}
+        />
+        <div className={styles.content}>
+          <h2>{project.title}</h2>
+          <p>{project.description}</p>
+          {project?.stack?.length > 0 && (
+            <ul>
+              {project.stack.map((el, i) => (
+                <li key={i}>{el}</li>
+              ))}
+            </ul>
+          )}
+          <a
+            aria-label={project.label}
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.demo}
+          >
+            live demo
+          </a>
+        </div>
+      </motion.div>
+    ))}
+  </motion.div>
+);
 
 const Img = ({ imgName, alt, className }) => (
   <Image
@@ -71,8 +46,6 @@ const Img = ({ imgName, alt, className }) => (
     quality="80"
     alt={alt}
     className={className}
-    // onMouseMove={handleMouseMove}
-    // onMouseLeave={handleMouseOver}
   />
 );
 

@@ -70,6 +70,7 @@ const ContactForm = ({ setIsModalOpen }) => {
             name="email"
             id="email"
             onChange={handleChange}
+            placeholder=" "
             required
           />
           <label htmlFor="email">E-mail</label>
@@ -79,6 +80,7 @@ const ContactForm = ({ setIsModalOpen }) => {
             name="content"
             id="content"
             onChange={handleChange}
+            placeholder=" "
             required
           />
           <label htmlFor="content">Write your message...</label>
