@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fadeInUp, stagger } from "../../animations/animations";
+import { fadeInUp } from "../../animations/animations";
 import styles from "./ContactForm.module.scss";
 import Button from "../Button/Button";
 import { motion } from "framer-motion";

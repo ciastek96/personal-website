@@ -45,7 +45,7 @@ const data = {
       city: "Gliwice",
       date: "Oct 2017 - Feb 2021",
       degree: "Bachelor of Engineering",
-      subject: "Computer science at the faculty of Electronics",
+      subject: "Computer science at the Faculty of Electronics",
     },
     {
       name: "Technical and Computer Science School Complex No. 1",
