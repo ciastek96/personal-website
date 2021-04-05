@@ -51,7 +51,7 @@ const data = {
       name: "Technical and Computer Science School Complex No. 1",
       city: "Gliwice",
       date: "Sep 2012 - May 2016",
-      degree: "",
+      degree: "Technician",
       subject: "Computer Science",
     },
   ],

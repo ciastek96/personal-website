@@ -74,7 +74,7 @@ const projects = [
       "Styled-Components",
     ],
     label: "Go to Rentapp live demo",
-    href: "#",
+    href: "https://myrentapp.netlify.app/",
   },
 ];
 
