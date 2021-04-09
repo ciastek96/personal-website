@@ -22,6 +22,7 @@ const ScrollToTopButton = () => {
     <button
       className={cx(styles.button, { [styles.hidden]: isHidden })}
       onClick={scrollToTop}
+      aria-label="Scroll to top"
     >
       <TopIcon className={styles.icon} />
     </button>
