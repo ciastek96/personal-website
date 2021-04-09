@@ -1,0 +1,32 @@
+@use '../../styles/utils.module.scss' as *;
+$size: 32px;
+
+.button {
+  width: $size;
+  height: $size;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: $color-main;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  box-shadow: 0 10px 30px -10px hsla(0, 0%, 0%, 0.2);
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.5s;
+
+  .icon {
+    fill: white;
+    width: 60%;
+  }
+}
+
+.hidden {
+  transform: translateY(200px);
+  opacity: 0;
+}

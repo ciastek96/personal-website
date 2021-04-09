@@ -17,6 +17,7 @@ const ContactForm = ({ setIsModalOpen }) => {
     content: "",
   });
   const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setContactData({ ...contactData, [e.target.name]: e.target.value });
@@ -24,6 +25,7 @@ const ContactForm = ({ setIsModalOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     if (!errors.length) {
       fetch("/", {
         method: "POST",
@@ -34,7 +36,8 @@ const ContactForm = ({ setIsModalOpen }) => {
           setIsModalOpen(true);
           console.log("Form successfully submitted");
         })
-        .catch((error) => alert(error));
+        .catch((error) => alert(error))
+        .finally(() => setIsLoading(false));
     }
   };
 
@@ -86,7 +89,7 @@ const ContactForm = ({ setIsModalOpen }) => {
           <label htmlFor="content">Write your message...</label>
         </div>
       </form>
-      <Button type="submit" form="contact">
+      <Button type="submit" form="contact" isLoading={isLoading}>
         Send
       </Button>
     </motion.div>

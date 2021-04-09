@@ -5,6 +5,7 @@ import { stagger } from "../../animations/animations";
 import styles from "./Layout.module.scss";
 import Header from "../Header/Header";
 import Toggle from "../Toggle/Toggle";
+import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
 
 const name = "Kamil Kołacz";
 export const siteTitle = "Kamil Kołacz - personal website";
@@ -36,6 +37,7 @@ export default function Layout({ children }) {
         >
           <motion.main variants={stagger}>{children}</motion.main>
         </motion.div>
+        <ScrollToTopButton />
       </div>
     </>
   );

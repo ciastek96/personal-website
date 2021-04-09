@@ -1,8 +1,9 @@
 import styles from "./Button.module.scss";
+import SpinnerIcon from "../../public/icons/svg/spinner/circle-o-notch.svg";
 
-const Button = (props) => (
+const Button = ({ isLoading, ...props }) => (
   <button {...props} className={styles.button}>
-    {props.children}
+    {isLoading ? <SpinnerIcon className={styles.spinner} /> : props.children}
   </button>
 );
 

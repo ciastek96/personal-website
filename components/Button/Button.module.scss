@@ -1,6 +1,19 @@
 @use '../../styles/utils.module.scss' as *;
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .button {
+  min-width: 130px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: baseline;
   margin: 1rem 0 3rem;
   padding: 0.7rem 2.5rem;
   border-radius: 5px;
@@ -10,4 +23,23 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: lighten($color-main, 10%);
+  }
+
+  &:active {
+    background-color: lighten($color-main, 15%);
+  }
+
+  &:focus {
+    outline-color: darken($color-main, 20%);
+  }
+
+  .spinner {
+    width: 14px;
+    fill: white;
+    animation: rotate 0.6s linear infinite;
+  }
 }
