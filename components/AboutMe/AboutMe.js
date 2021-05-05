@@ -4,7 +4,7 @@ const info = {
   city: "Gliwice",
   country: "Poland",
   age: "24",
-  "e-mail": "ciastek1996@gmail.com",
+  "e-mail": "kamil.kolacz@outlook.com",
 };
 
 const AboutMe = () => (
