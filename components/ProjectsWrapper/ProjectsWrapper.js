@@ -51,6 +51,15 @@ const Img = ({ imgName, alt, className }) => (
 
 const projects = [
   {
+    title: "URO-MK",
+    imgName: "uromk.jpg",
+    alt: "uro-mk.netlify.app website",
+    description: "The project I'm currently working on.",
+    stack: ["NextJS", "TypeScript", "GraphCMS", "GraphQL", "Styled-Components"],
+    label: "Go to uro-mk.netlify.app",
+    href: "https://uro-mk.netlify.app/",
+  },
+  {
     title: "2LB",
     imgName: "2lb.jpg",
     alt: "2lb.pl website",

@@ -3,7 +3,7 @@ import styles from "./AboutMe.module.scss";
 const info = {
   city: "Gliwice",
   country: "Poland",
-  age: "24",
+  age: 25,
   "e-mail": "kamil.kolacz@outlook.com",
 };
 
